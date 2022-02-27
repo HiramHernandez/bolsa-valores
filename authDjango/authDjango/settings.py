@@ -52,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware'
 ]
 
 ROOT_URLCONF = 'authDjango.urls'
@@ -139,10 +140,10 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny'
     ]
 }
-'''
-CORS_ORIGIN_ALLOW_ALL = False
+
+#CORS_ORIGIN_ALLOW_ALL = False
+
 
 CORS_ORIGIN_WHITELIST = (
-       'localhost:3000',
+    'http://localhost:3000',
 )
-'''
