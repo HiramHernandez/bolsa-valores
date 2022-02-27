@@ -1,0 +1,23 @@
+version: '3.7'
+services:
+  auth-django:
+    tty: true
+    build: ./authDjango
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./authDjango:/code
+    ports:
+       - 8000:8000
+
+  auth-react:
+    tty: true
+    build: ./auth-react
+    command: npm start
+    ports:
+      - 3000:3000
+    # NEW
+    #expose:
+    #  - 3000
+    image: no-react
+    volumes:
+      - ./auth-react:/code
